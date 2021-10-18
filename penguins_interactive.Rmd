@@ -1,0 +1,15 @@
+---
+title: "Interactive Penguins"
+author: "Chase Tarr"
+date: "10/18/2021"
+output: html_document
+---
+
+```{r setup, include=TRUE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly) # install.packages("")
+library(DT) # install.package("")
+library(tidyverse)
+library(palmerpenguins)
+```
+
