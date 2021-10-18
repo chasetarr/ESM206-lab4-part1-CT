@@ -6,10 +6,32 @@ output: html_document
 ---
 
 ```{r setup, include=TRUE, message = FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE) # applies to every code chunk
 library(plotly) # install.packages("")
 library(DT) # install.package("")
 library(tidyverse)
 library(palmerpenguins)
+```
+
+### Making an interactive plot 
+- view(penguins) in console brings up the data
+
+```{r}
+penguins_graph <- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species)) # stores this graph as penguins_graph
+# color = species tells the graph to change the dot color based on penguin species
+
+penguins_graph # now we have to call the graph to actually see it show up 
+```
+
+- using ggplotly to make interactive graph
+```{r}
+ggplotly(penguins_graph) 
+```
+
+### Making Interactive Tables 
+- Comes from the DT package (data table)
+```{r}
+datatable(penguins)
 ```
 
